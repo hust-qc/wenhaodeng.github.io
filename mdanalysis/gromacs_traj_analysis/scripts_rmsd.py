@@ -3,6 +3,41 @@ import matplotlib.pyplot as plt
 import numpy as np
 from MDAnalysis.analysis import rms
 
-# 设置全局字体为Arial
+# Arial font
 plt.rcParams['font.family'] = 'Arial'
 plt.rcParams['font.sans-serif'] = ['Arial']
+
+u = mda.Universe('step3_input.gro', 'step7_npt2_production.xtc')
+
+# select backbone as reference
+protein = u.select_atoms('protein and backbone')
+
+# crystal structure as the base
+ref = mda.Universe('step3_input.gro')
+ref_protein = ref.select_atoms('protein and backbone')
+
+# calculate RMSD value
+rmsd_analysis = rms.RMSD(protein, ref_protein, select='backbone')
+rmsd_analysis.run()
+
+# 100 ns here we used, please assure how long the production runs 
+time = rmsd_analysis.times/1000
+rmsd = rmsd_analysis.rmsd[:, 2]   
+
+# calculate average RMSD
+average_rmsd = np.mean(rmsd)
+print(f"Average RMSD: {average_rmsd:.3f} Å")
+
+# plot
+plt.figure(figsize=(10, 6))
+plt.plot(time, rmsd, 'b-', label='RMSD')
+plt.xlabel('Time (ns)', fontsize=16)
+plt.ylabel('RMSD (Å)', fontsize=16)
+#plt.title('RMSD over Time')
+plt.grid(True)
+plt.legend(fontsize=14)
+plt.tick_params(axis='both', labelsize=14)
+
+# 保存图像
+plt.savefig('rmsd_plot_mn.png')
+plt.close()
