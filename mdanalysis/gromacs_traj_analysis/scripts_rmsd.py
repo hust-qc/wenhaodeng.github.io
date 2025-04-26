@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from MDAnalysis.analysis import rms
 
-# set Arial font for all text in the generated figures
+# set Arial font for all text in the generated figure
 plt.rcParams['font.family'] = 'Arial'
 plt.rcParams['font.sans-serif'] = ['Arial']
 
