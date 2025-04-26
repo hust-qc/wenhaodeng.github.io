@@ -22,7 +22,7 @@ rmsd_analysis = rms.RMSD(protein, ref_protein, select='backbone')
 rmsd_analysis.run()
 
 # 100 ns here we used, please assure how long the production runs 
-time = rmsd_analysis.times/1000
+time = rmsd_analysis.times/1000  #please print (rmsd_analysis.times) to check the time it runs and modify this value when necessary!
 rmsd = rmsd_analysis.rmsd[:, 2]   
 
 # calculate average RMSD
