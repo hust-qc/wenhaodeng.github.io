@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from MDAnalysis.analysis import rms
 
-# Arial font
+# set Arial font for all text in the generated figure
 plt.rcParams['font.family'] = 'Arial'
 plt.rcParams['font.sans-serif'] = ['Arial']
 
@@ -38,6 +38,6 @@ plt.grid(True)
 plt.legend(fontsize=14)
 plt.tick_params(axis='both', labelsize=14)
 
-# 保存图像
-plt.savefig('rmsd_plot_mn.png')
+# save image
+plt.savefig('rmsd_plot_mn.png', dpi=600)
 plt.close()
