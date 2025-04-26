@@ -1,1 +1,1 @@
-
+After the production runs using GROMACS, you may have xtc file. And you also need a setup model, for example step3_input.gro, which usually is used in the beginning of MD simulations
