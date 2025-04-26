@@ -29,7 +29,7 @@ distances = np.array(distances)
 
 #draw figure using plt
 plt.figure(figsize=(10, 6))
-plt.hist(distances, bins=25, color='red', edgecolor='black', range=(2.6, 3.4), alpha=0.7, label='Distance Distribution')
+plt.hist(distances, bins=25, color='red', edgecolor='black', range=(2.6, 3.4), alpha=0.7, label='Distance Distribution')  # please change range if you want
 plt.xlabel('Distance (Å)', fontsize=16)
 plt.ylabel('Frequency', fontsize=16)
 # plt.title('Histogram of Atom Distance')
@@ -39,8 +39,8 @@ plt.legend(fontsize=12)
 plt.tick_params(axis='both', labelsize=12)
 
 # set limitations
-plt.xlim(2.6, 3.4)
-plt.ylim(0, 200)
+plt.xlim(2.6, 3.4)  # please change this according to your select bond
+plt.ylim(0, 200)   # please change this according to the frequency
 
 # save image
 plt.savefig('atom_distance_histogram_chaina_o1pa_mn.png', dpi=600)
