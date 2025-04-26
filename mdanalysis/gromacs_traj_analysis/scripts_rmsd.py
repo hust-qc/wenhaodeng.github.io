@@ -7,7 +7,8 @@ from MDAnalysis.analysis import rms
 plt.rcParams['font.family'] = 'Arial'
 plt.rcParams['font.sans-serif'] = ['Arial']
 
-u = mda.Universe('step3_input.gro', 'step7_npt2_production.xtc')
+# import the setup model and the trajectory of 100 ns production, 
+u = mda.Universe('step3_input.gro', 'step7_npt2_production.xtc') 
 
 # select backbone as reference
 protein = u.select_atoms('protein and backbone')
