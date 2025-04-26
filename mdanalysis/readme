@@ -1,0 +1,7 @@
+The main scripts are deposit into gromacs_traj_analysis directory.
+
+there are some different when analysis trajectory.
+
+In gromacs the input files are "step_input.gro" and "md_production.xtc"
+
+But when using NAMD or CHARMM, they are ""step_input.pdb" and "md_production.dcd". Thus you need to change the scripts about input files items.
