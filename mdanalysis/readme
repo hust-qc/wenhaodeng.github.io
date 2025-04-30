@@ -1,6 +1,6 @@
 The main scripts are deposit into gromacs_traj_analysis directory.
 
-there are some different when analysis trajectory.
+there are something different when trajectories were generated using different MD software.
 
 In gromacs the input files are "step_input.gro" and "md_production.xtc"
 
